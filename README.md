@@ -1,6 +1,8 @@
 # AngularShopping
-This a simple project (**Recipe Book**) was generated with [Angular CLI](https://github.com/angular/angular-cli), **Typecript**, **Rxjs**, **Ngrx**.
+This a simple project (**Recipe Book**) was generated with [Angular CLI](https://github.com/angular/angular-cli).
+I used **Angular**, **Typecript**, **Rxjs** and **Ngrx** for developing this Project.
 I tryed to write some simple **Unit Tests** for reducer, components, services.
+You can find the demo here: [Demo](https://haniehmhf.github.io/recipes-book)
 
 ## Development server
 
@@ -17,10 +19,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
 
