@@ -1,0 +1,11 @@
+.recipe-box {
+    height: 180px !important;
+    width: 100%;
+
+    .recipe-desc {
+        display: inline-block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: inherit;
+   }
+}

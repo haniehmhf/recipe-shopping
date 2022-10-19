@@ -24,11 +24,13 @@ export class AuthComponent implements OnInit {
   }
 
   changeMode() {
+    event?.preventDefault()
     this.isLoginMode =  !this.isLoginMode
   }
 
   onSubmit(form:NgForm) {   
     this.loading = true
+    this.error = null;
     const formValue = form.value;    
     const obs$ = iif(() => this.isLoginMode,this.authService.login(formValue),this.authService.signUp(formValue))
     obs$.pipe(takeUntil(this.destroy$)).subscribe(() => {
