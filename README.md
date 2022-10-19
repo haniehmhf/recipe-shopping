@@ -1,5 +1,5 @@
 # AngularShopping
-This a simple project **Recipe Book** was generated with [Angular CLI](https://github.com/angular/angular-cli), **Typecript**, **Rxjs**, **Ngrx**.
+This a simple project (**Recipe Book**) was generated with [Angular CLI](https://github.com/angular/angular-cli), **Typecript**, **Rxjs**, **Ngrx**.
 I tryed to write some simple **Unit Tests** for reducer, components, services.
 
 ## Development server
