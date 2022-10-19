@@ -1,0 +1,43 @@
+<ng-container *ngIf="selectedRecpie;else noSelected">
+    <div class="row">
+        <div class="col-12">
+            <img [src]="selectedRecpie.imagePath" alt="" style="width: 300px;" class="img-responsive">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h1>{{selectedRecpie.name}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Manage Recipe
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" (click)="addToList()">To shopping list</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['../',param,'edit']">Edit</a></li>
+                    <li><a class="dropdown-item" (click)="delete()">Delete</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+           {{ selectedRecpie.description }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="list-group">
+                <div class="list-group-item" *ngFor="let item of selectedRecpie.ingredients">
+                    {{item.name}} : {{item.amount}}
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-template #noSelected>
+    <p>No Recpie Selected</p>
+</ng-template> 

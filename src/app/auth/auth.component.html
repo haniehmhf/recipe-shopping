@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-12 col-md-6 col-md-offset-5">
+    <ng-container *ngIf="!loading;else loader">
+        <div *ngIf="error" class="alert alert-danger">
+            <span>{{error}}</span>
+        </div>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              name="email"
+              required
+              email
+              ngModel
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              required
+              ngModel
+              name="password"
+              minlength="6"
+            />
+          </div>
+          <div class="mt-2">
+            <button [disabled]="!f.valid" class="btn btn-primary me-1" type="submit">
+              {{ isLoginMode ? "Login" : "Sign Up" }}
+            </button>
+            <button class="btn btn-primary" type="button" (click)="changeMode()">
+              Switch To {{ !isLoginMode ? "Login" : "Sign Up" }}
+            </button>
+          </div>
+        </form>
+    </ng-container>
+  </div>
+</div>
+<ng-template #loader>
+    <div class="d-flex justify-content-center w-100">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+    </div>
+</ng-template>

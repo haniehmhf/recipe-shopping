@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg" style="background-color:#7FBCD2;">
+    <div class="container-fluid">
+        <a class="navbar-brand">Recipe Book</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="isLogin" aria-current="page" routerLinkActive='active' routerLink="/recpies">Recipes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="!isLogin" aria-current="page" routerLinkActive='active' routerLink="/auth">Athenticated</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLinkActive='active' routerLink='/shopping-list'>Shopping List</a>
+                </li>
+            </ul>
+            <button type="button" *ngIf="isLogin" class="btn btn-secondary me-1" style="cursor: pointer;" (click)="logout()">Logout</button>
+            <div class="dropdown" *ngIf="isLogin;else login">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Manage
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" style="cursor: pointer;" (click)="getData()">Fetch data</a></li>
+                    <li><a class="dropdown-item" style="cursor: pointer;" (click)="sendDate()">Send Data</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<ng-template #login>
+    <button class="btn btn-primary" type="button" routerLink="/auth">Login</button>
+</ng-template>
+<ng-template modalMessage #modal></ng-template>

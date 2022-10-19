@@ -1,0 +1,31 @@
+
+
+<div class="row">
+    <div class="col-12">
+        <button class="btn btn-success" (click)="addNew()">New Recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row mb-2">
+    <div class="col-12">
+        <div class="input-group">
+            <span class="input-group-text" id="inputGroup-sizing-sm">
+                <i class="bi bi-search"></i>
+            </span>
+            <input type="text" class="form-control" placeholder="Search Recipe Name" [(ngModel)]="searchKey">
+        </div>
+    </div>
+</div>
+<div class="row list-group">
+    <div class="col-12">
+        <ng-container *ngIf="recpies && recpies.length && !loading;else loader">
+            <app-recipe-item *ngFor="let recpie of recpies| filter:searchKey;let i = index" [index]="i" [recpie]="recpie"></app-recipe-item>
+        </ng-container>
+    </div>
+</div>
+<ng-template #loader>
+    <div class="spinner-grow text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</ng-template>
+

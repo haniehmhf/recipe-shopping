@@ -1,0 +1,9 @@
+<a [routerLink]="[index]" routerLinkActive="active" class="list-group-item mb-1 d-flex h-100 w-100 rounded-2 justify-content-between align-items-center">
+    <div class="ms-2 me-auto">
+        <h4 class="list-group-item-heading mb-1">{{recpie.name}}</h4>
+        <p class="list-group-item-text mb-0">{{recpie.description}}</p>
+    </div>
+    <span class="float-right">
+        <img [src]="sanitizer.bypassSecurityTrustUrl(recpie.imagePath)" alt="" class="img-responsive rounded-2" style="max-height:100px">
+    </span>
+</a>
